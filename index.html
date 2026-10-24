@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tribal Tutors — Empowering Underserved Learners</title>
+  <!-- Link to CSS (I'll provide style.css next) -->
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Tribal Tutors: personalized learning for underserved communities — student & tutor flows, tests, donations, resources and awareness.">
+</head>
+<body>
+
+  <!-- ========== SITE HEADER ========== -->
+  <header class="site-header" role="banner">
+    <div class="header-inner container">
+      <div class="brand" aria-label="Tribal Tutors">
+        <div class="brand-mark" aria-hidden="true">TT</div>
+        <div class="brand-text">
+          <div class="site-title">Tribal Tutors</div>
+          <div class="site-sub">Learning tailored to communities</div>
+        </div>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#courses" class="nav-link">Courses</a></li>
+          <li><a href="#tutors" class="nav-link">Tutors</a></li>
+          <li><a href="#resources" class="nav-link">Resources</a></li>
+          <li><a href="#feedback" class="nav-link">Feedback</a></li>
+          <li><a href="#queries" class="nav-link">Queries</a></li>
+          <li><a href="#donation" class="nav-link donate-link">Donate</a></li>
+          <li><button class="btn signin-btn" onclick="openSignIn()">Sign in</button></li>
+          <li><a href="#signup" class="btn btn-outline">Sign up</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== MAIN / HERO ========== -->
+  <main id="home" class="hero" role="main">
+    <div class="container hero-inner">
+      <section class="hero-left">
+        <h1 class="hero-title">Education that reaches every village</h1>
+        <p class="hero-sub">Personalised learning for children and adults in underserved communities — tests, tailored curriculum, verified tutors and community support.</p>
+
+        <div class="hero-actions">
+          <button class="cta primary" onclick="openSignIn()">Get Started</button>
+          <button class="cta secondary" onclick="scrollToSection('courses')">Browse Courses</button>
+        </div>
+
+        <div class="quotes">
+          <blockquote>“Education is the most powerful weapon which you can use to change the world.” — Nelson Mandela</blockquote>
+          <blockquote>“No one should be left behind.”</blockquote>
+        </div>
+      </section>
+
+      <aside class="hero-right">
+        <div class="floating-card">
+          <h3>Quick actions</h3>
+          <ul class="quick-list">
+            <li><button onclick="openStudentTestModal()" class="btn small">Take Student Level Test</button></li>
+            <li><button onclick="openTutorTestModal()" class="btn small">Tutor Verification</button></li>
+            <li><button onclick="scrollToSection('resources')" class="btn small">Open Free Resources</button></li>
+          </ul>
+          <div class="free-links">
+            <small>Free resources</small>
+            <ul>
+              <li><a href="https://www.khanacademy.org/" target="_blank" rel="noopener">Khan Academy</a></li>
+              <li><a href="https://www.youtube.com/@CrashCourse" target="_blank" rel="noopener">CrashCourse (YouTube)</a></li>
+              <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN (Web)</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="section about container">
+    <h2>About Tribal Tutors</h2>
+    <p class="lead">We design learning paths that respect language, local knowledge and livelihood priorities. This platform helps learners who have limited connectivity or left school early, and connects them to verified tutors who can teach and earn.</p>
+
+    <div class="three-cards">
+      <article class="card">
+        <h3>Mission</h3>
+        <p>Deliver education that fits local lives and leads to livelihoods.</p>
+      </article>
+      <article class="card">
+        <h3>How we work</h3>
+        <p>Personalised curriculum, level-based tests, tutor verification and community support.</p>
+      </article>
+      <article class="card">
+        <h3>Impact</h3>
+        <p>Fund learning kits, awareness programs and fair tutor payments via donations.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== COURSES ========== -->
+  <section id="courses" class="section courses container">
+    <h2>Courses</h2>
+    <p class="lead">Choose a course. Each course has level-based student tests and suggested curriculum modules.</p>
+
+    <div class="course-grid" aria-live="polite">
+      <article class="course-card">
+        <h3>Digital Basics</h3>
+        <p>Phone skills, messaging, online safety, simple earning routes.</p>
+        <div class="card-actions">
+          <button onclick="startCourseFlow('digital')" class="btn">Start</button>
+          <button onclick="openStudentTestModal()" class="btn ghost">Take level test</button>
+        </div>
+      </article>
+
+      <article class="course-card">
+        <h3>Sustainable Farming</h3>
+        <p>Soil care, crop planning, natural fertilisers and small-market skills.</p>
+        <div class="card-actions">
+          <button onclick="startCourseFlow('farming')" class="btn">Start</button>
+          <button onclick="openStudentTestModal()" class="btn ghost">Take level test</button>
+        </div>
+      </article>
+
+      <article class="course-card">
+        <h3>Local Crafts to Market</h3>
+        <p>Design, pricing, packaging and digital listings for crafts.</p>
+        <div class="card-actions">
+          <button onclick="startCourseFlow('crafts')" class="btn">Start</button>
+          <button onclick="openStudentTestModal()" class="btn ghost">Take level test</button>
+        </div>
+      </article>
+
+      <article class="course-card">
+        <h3>Language & Literacy</h3>
+        <p>Local-language reading, storytelling and communication skills.</p>
+        <div class="card-actions">
+          <button onclick="startCourseFlow('literacy')" class="btn">Start</button>
+          <button onclick="openStudentTestModal()" class="btn ghost">Take level test</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== TUTORS ========== -->
+  <section id="tutors" class="section tutors container">
+    <h2>Tutors</h2>
+    <p class="lead">Verified tutors who teach in local languages and practical skills.</p>
+
+    <div id="tutorGrid" class="tutor-grid" aria-live="polite">
+      <!-- JS will populate tutors here -->
+    </div>
+
+    <div class="center">
+      <button class="cta" onclick="openSignIn()">Enroll as Tutor</button>
+    </div>
+  </section>
+
+  <!-- ========== RESOURCES ========== -->
+  <section id="resources" class="section resources container">
+    <h2>Free Resources</h2>
+    <p class="lead">Open educational resources, YouTube channels and downloadable guides for offline use.</p>
+
+    <div class="resources-grid">
+      <div class="resource">
+        <img src="https://images.unsplash.com/photo-1513267048338-5f1b3c8d9f6d?q=80&w=800&auto=format&fit=crop" alt="">
+        <h4>Khan Academy</h4>
+        <a href="https://www.khanacademy.org/" target="_blank" rel="noopener">Open</a>
+      </div>
+      <div class="resource">
+        <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=800&auto=format&fit=crop" alt="">
+        <h4>CrashCourse (YouTube)</h4>
+        <a href="https://www.youtube.com/@CrashCourse" target="_blank" rel="noopener">Open</a>
+      </div>
+      <div class="resource">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="">
+        <h4>MDN Web Docs</h4>
+        <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">Open</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEEDBACK ========== -->
+  <section id="feedback" class="section feedback container">
+    <h2>Feedback</h2>
+    <p class="lead">Your feedback helps us improve. Submit suggestions, issues or praise.</p>
+
+    <form id="feedbackForm" class="form feedback-form" aria-label="Feedback form">
+      <div class="form-row">
+        <input id="fbName" name="name" type="text" placeholder="Your name" required>
+        <input id="fbEmail" name="email" type="email" placeholder="Email (optional)">
+      </div>
+      <textarea id="fbMessage" name="message" placeholder="Your message" rows="4" required></textarea>
+      <div class="form-actions">
+        <button type="submit" class="btn">Send Feedback</button>
+      </div>
+    </form>
+
+    <div id="feedbackList" class="feedback-list" aria-live="polite"></div>
+  </section>
+
+  <!-- ========== QUERIES ========== -->
+  <section id="queries" class="section queries container">
+    <h2>Queries</h2>
+    <p class="lead">Ask about courses, tutors, or hosting an awareness program in your region.</p>
+
+    <form id="queryForm" class="form query-form">
+      <textarea id="queryMsg" name="query" placeholder="Write your query" rows="3" required></textarea>
+      <div class="form-actions">
+        <button type="submit" class="btn">Submit Query</button>
+      </div>
+    </form>
+
+    <div id="queryList" class="query-list" aria-live="polite"></div>
+  </section>
+
+  <!-- ========== DONATION ========== -->
+  <section id="donation" class="section donation container">
+    <h2>Donate</h2>
+    <p class="lead">Donations fund learning kits, tutor honorariums and awareness programmes.</p>
+
+    <div class="donation-panel">
+      <input id="donorName" type="text" placeholder="Your name (optional)">
+      <input id="donorAmount" type="number" placeholder="Amount (₹)" min="50">
+      <button class="btn" onclick="processDonation()">Donate</button>
+    </div>
+
+    <div id="donationList" class="donation-list"></div>
+  </section>
+
+  <!-- ========== SIGN UP (IN-PAGE) ========== -->
+  <section id="signup" class="section signup container">
+    <h2>Create Account</h2>
+    <p class="lead">Sign up as a Student or a Tutor. This is a prototype — registration is stored locally in your browser.</p>
+
+    <form id="signupForm" class="form signup-form">
+      <input id="suName" name="name" type="text" placeholder="Full name" required>
+      <input id="suEmail" name="email" type="email" placeholder="Email" required>
+      <select id="suRole" name="role" required>
+        <option value="student">Student</option>
+        <option value="tutor">Tutor</option>
+      </select>
+
+      <div id="tutorExtra" style="display:none;">
+        <label for="suStream">If tutor: Select stream</label>
+        <select id="suStream" name="stream">
+          <option>Mathematics</option>
+          <option>Science</option>
+          <option>Agriculture</option>
+          <option>Crafts</option>
+          <option>Digital Skills</option>
+          <option>Language</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Create Account</button>
+      </div>
+    </form>
+
+    <div id="accountMsg" class="account-msg"></div>
+  </section>
+
+  <!-- ========== STUDENT TEST MODAL ========== -->
+  <div id="studentTestModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <button class="modal-close" onclick="closeStudentTestModal()" aria-label="Close">&times;</button>
+      <div id="studentTestContent" class="modal-content">
+        <!-- JS will render student multi-step test here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== TUTOR TEST MODAL ========== -->
+  <div id="tutorTestModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-panel large">
+      <button class="modal-close" onclick="closeTutorTestModal()" aria-label="Close">&times;</button>
+      <div id="tutorTestContent" class="modal-content">
+        <!-- JS will render tutor verification + knowledge test here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== CERTIFICATE MODAL ========== -->
+  <div id="certificateModal" class="modal" aria-hidden="true">
+    <div class="modal-panel small">
+      <button class="modal-close" onclick="closeCertificateModal()" aria-label="Close">&times;</button>
+      <div id="certificateContent" class="modal-content">
+        <!-- JS will show tutor certificate simulation here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <strong>Tribal Tutors</strong>
+        <div class="muted">A prototype for community-first learning</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">About</a> ·
+        <a href="#courses">Courses</a> ·
+        <a href="#resources">Resources</a>
+      </div>
+
+      <div class="footer-note">© 2025 Tribal Tutors • Prototype (no real payments). Built for your project submission.</div>
+    </div>
+  </footer>
+
+  <!-- ====== Script file (I'll provide script.js next) ====== -->
+  <script src="script.js"></script>
+</body>
+</html>
